@@ -3,7 +3,7 @@
 
 // access the arguments
 const args = process.argv.slice(2); // always exclude first two elements in process.argv
-// Convert arguments to numbers if possible, filters out any negative numbers and NaN values (that couldn't be converted to numbers) 
+// Convert arguments to numbers if possible, filters out any negative numbers and NaN values (that couldn't be converted to numbers)
 // and sort them in ascending order
 const bellTimes = args
   .map(num => Number(num))
@@ -13,13 +13,13 @@ const bellTimes = args
 let currentTime = 0;
 
 const timer = function() {
-  if (currentTime > bellTimes[bellTimes.length - 1] || 0) { 
+  if (currentTime > bellTimes[bellTimes.length - 1] || 0) {
     return;
 
   }
   if (bellTimes.includes(currentTime)) {
     process.stdout.write("\x07");
-    console.log(`bell at ${currentTime} seconds`); // 
+    console.log(`bell at ${currentTime} seconds`);
   }
 
   currentTime++;
@@ -31,7 +31,7 @@ if (bellTimes.length > 0) {
   timer();
 } else {
   console.log("No Bell Times were Provided");
-};
+}
 
 
 
